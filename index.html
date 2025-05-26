@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cursos de Segurança Profissional</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #02071dc2, #322e3a, #6146db);
+            background-size: 600% 600%;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50% }
+            50% { background-position: 100% 50% }
+            100% { background-position: 0% 50% }
+        }
+        
+        .course-card {
+            transition: all 0.3s ease;
+        }
+        
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-whatsapp {
+            transition: all 0.3s ease;
+        }
+        
+        .btn-whatsapp:hover {
+            transform: scale(1.05);
+        }
+        
+        .header-container {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+        }
+
+        .course-icon {
+            transition: all 0.3s ease;
+        }
+
+        .course-card:hover .course-icon {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body class="min-h-screen pb-10">
+    <!-- Header com Logo -->
+    <header class="header-container sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-4 flex justify-center items-center">
+            <div class="flex items-center">
+                <!-- Logo Placeholder -->
+                <div class="mr-3">
+                    <svg class="w-12 h-12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L2 7L12 12L22 7L12 2Z" fill="#1a2a6c"/>
+                        <path d="M2 17L12 22L22 17" stroke="#1a2a6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12L12 17L22 12" stroke="#1a2a6c" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h1 class="text-2xl md:text-3xl font-bold text-gray-800">JBL Treinamento</h1>
+            </div>
+        </div>
+    </header>
+
+    <!-- Banner/Capa -->
+    <div class="relative h-64 md:h-80 overflow-hidden mb-8">
+        <div class="absolute inset-0 bg-gradient-to-r from-blue-900 to-blue-700 opacity-90"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-white p-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-2">"Seu futuro começa aqui: curso 100% online com certificado reconhecido."</h2>
+            <p class="text-xl md:text-2xl max-w-3xl">Cursos online especializados para profissionais que buscam excelência e crescimento</p>
+            <a href="https://wa.me/5573991234453" class="mt-6 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full flex items-center transition-all duration-300 transform hover:scale-105">
+                <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 6.628 5.373 12 12 12 6.628 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm.029 18.88a7.947 7.947 0 0 1-3.82-.97l-4.239 1.11 1.137-4.145a7.908 7.908 0 0 1-1.058-3.955c0-4.365 3.552-7.916 7.917-7.916 4.365 0 7.916 3.551 7.916 7.916 0 4.366-3.551 7.917-7.916 7.917z" fill-rule="nonzero"/>
+                </svg>
+                Fale Conosco no WhatsApp
+            </a>
+        </div>
+    </div>
+
+    <!-- Lista de Cursos -->
+    <div class="container mx-auto px-4">
+        <h2 class="text-2xl md:text-3xl font-bold text-white text-center mb-8">Nossos Cursos Especializados</h2>
+        
+        <div class="grid gap-6 max-w-4xl mx-auto">
+            <!-- Curso 1 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
+                                    <path fill-rule="evenodd" d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Segurança Bancário</h3>
+                            <p class="text-gray-600 mb-4">Aprenda técnicas avançadas de segurança para instituições financeiras, protocolos de emergência e gerenciamento de crises. Curso completo para atuar com excelência na proteção de bancos e seus clientes.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Segurança%20Bancário" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 2 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Supervisor de Segurança</h3>
+                            <p class="text-gray-600 mb-4">Desenvolva habilidades de liderança e gestão de equipes de segurança. Aprenda a coordenar operações, elaborar escalas, gerenciar conflitos e implementar procedimentos de segurança eficientes em diversos ambientes.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Supervisor%20de%20Segurança" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 3 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Vigilante Líder</h3>
+                            <p class="text-gray-600 mb-4">Capacitação para vigilantes que desejam assumir posições de liderança. O curso aborda comunicação eficaz, tomada de decisões, resolução de problemas e coordenação de equipes em situações de rotina e emergência.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Vigilante%20Líder" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 4 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Fiscal de Loja e Prevenção de Perdas</h3>
+                            <p class="text-gray-600 mb-4">Formação completa em técnicas de prevenção de furtos, controle de estoque e identificação de fraudes no varejo. Aprenda a reduzir perdas e aumentar a lucratividade através de procedimentos eficientes de segurança.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Fiscal%20de%20Loja%20e%20Prevenção%20de%20Perdas" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 5 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Porteiro Líder</h3>
+                            <p class="text-gray-600 mb-4">Especialização para porteiros que buscam posições de liderança. O curso aborda gestão de equipes, controle de acesso avançado, atendimento ao público diferenciado e procedimentos de segurança em condomínios e empresas.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Porteiro%20Líder" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 6 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0zM15 16.5a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"></path>
+                                    <path d="M3 4a1 1 0 00-1 1v10a1 1 0 001 1h1.05a2.5 2.5 0 014.9 0H10a1 1 0 001-1V5a1 1 0 00-1-1H3zM14 7a1 1 0 00-1 1v6.05A2.5 2.5 0 0115.95 16H17a1 1 0 001-1v-5a1 1 0 00-.293-.707l-2-2A1 1 0 0015 7h-1z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Transporte de Valores</h3>
+                            <p class="text-gray-600 mb-4">Treinamento especializado para profissionais que atuam no transporte de valores. Aborda protocolos de segurança, técnicas defensivas, avaliação de riscos e procedimentos em situações de emergência durante o transporte.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Transporte%20de%20Valores" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 7 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.394 2.08a1 1 0 00-.788 0l-7 3a1 1 0 000 1.84L5.25 8.051a.999.999 0 01.356-.257l4-1.714a1 1 0 11.788 1.838L7.667 9.088l1.94.831a1 1 0 00.787 0l7-3a1 1 0 000-1.838l-7-3zM3.31 9.397L5 10.12v4.102a8.969 8.969 0 00-1.05-.174 1 1 0 01-.89-.89 11.115 11.115 0 01.25-3.762zM9.3 16.573A9.026 9.026 0 007 14.935v-3.957l1.818.78a3 3 0 002.364 0l5.508-2.361a11.026 11.026 0 01.25 3.762 1 1 0 01-.89.89 8.968 8.968 0 00-5.35 2.524 1 1 0 01-1.4 0zM6 18a1 1 0 001-1v-2.065a8.935 8.935 0 00-2-.712V17a1 1 0 001 1z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Segurança Escolar</h3>
+                            <p class="text-gray-600 mb-4">Formação específica para profissionais que atuam na segurança de instituições de ensino. Aprenda a lidar com situações sensíveis envolvendo estudantes, prevenção de bullying, controle de acesso e protocolos de emergência em ambiente escolar.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Segurança%20Escolar" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 8 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M2 5a2 2 0 012-2h12a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2V5zm3.293 1.293a1 1 0 011.414 0l3 3a1 1 0 010 1.414l-3 3a1 1 0 01-1.414-1.414L7.586 10 5.293 7.707a1 1 0 010-1.414zM11 12a1 1 0 100 2h3a1 1 0 100-2h-3z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Segurança de Shopping Center</h3>
+                            <p class="text-gray-600 mb-4">Especialização em segurança para ambientes de grande circulação. O curso aborda controle de multidões, prevenção de furtos, atendimento ao público, gerenciamento de crises e procedimentos específicos para centros comerciais.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Segurança%20de%20Shopping%20Center" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 9 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M4 4a2 2 0 012-2h8a2 2 0 012 2v12a1 1 0 01-1 1v1a1 1 0 11-2 0v-1H7v1a1 1 0 11-2 0v-1a1 1 0 01-1-1V4zm3 1h2v2H7V5zm2 4H7v2h2V9zm2-4h2v2h-2V5zm2 4h-2v2h2V9z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Agente de Portaria</h3>
+                            <p class="text-gray-600 mb-4">Formação completa para profissionais de portaria. Aprenda técnicas de controle de acesso, atendimento ao público, registro de visitantes, manuseio de sistemas de segurança e procedimentos em situações de emergência.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Agente%20de%20Portaria" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 10 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M3 3a1 1 0 000 2v8a2 2 0 002 2h2.586l-1.293 1.293a1 1 0 101.414 1.414L10 15.414l2.293 2.293a1 1 0 001.414-1.414L12.414 15H15a2 2 0 002-2V5a1 1 0 100-2H3zm11.707 4.707a1 1 0 00-1.414-1.414L10 9.586 8.707 8.293a1 1 0 00-1.414 0l-2 2a1 1 0 101.414 1.414L8 10.414l1.293 1.293a1 1 0 001.414 0l4-4z" clip-rule="evenodd"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Inspetor em Segurança Operacional</h3>
+                            <p class="text-gray-600 mb-4">Capacitação para profissionais que desejam atuar na inspeção e auditoria de procedimentos de segurança. Aprenda a identificar falhas, propor melhorias e garantir a conformidade com normas e regulamentos de segurança.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Inspetor%20em%20Segurança%20Operacional" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 11 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fill-rule="evenodd" d="M6 6V5a3 3 0 013-3h2a3 3 0 013 3v1h2a2 2 0 012 2v3.57A22.952 22.952 0 0110 13a22.95 22.95 0 01-8-1.43V8a2 2 0 012-2h2zm2-1a1 1 0 011-1h2a1 1 0 011 1v1H8V5zm1 5a1 1 0 011-1h.01a1 1 0 110 2H10a1 1 0 01-1-1z" clip-rule="evenodd"></path>
+                                    <path d="M2 13.692V16a2 2 0 002 2h12a2 2 0 002-2v-2.308A24.974 24.974 0 0110 15c-2.796 0-5.487-.46-8-1.308z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Técnicas de Emprego</h3>
+                            <p class="text-gray-600 mb-4">Curso prático para profissionais de segurança que buscam se destacar no mercado de trabalho. Aprenda a elaborar currículos eficientes, técnicas de entrevista, postura profissional e estratégias para conquistar as melhores oportunidades na área.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Técnicas%20de%20Emprego" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Curso 12 -->
+            <div class="course-card bg-white rounded-lg shadow-lg overflow-hidden">
+                <div class="p-6">
+                    <div class="flex flex-col md:flex-row">
+                        <div class="flex-shrink-0 flex justify-center mb-4 md:mb-0 md:mr-6">
+                            <div class="course-icon bg-blue-100 p-4 rounded-full w-24 h-24 flex items-center justify-center">
+                                <svg class="w-16 h-16 text-blue-800" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M13 6a3 3 0 11-6 0 3 3 0 016 0zM18 8a2 2 0 11-4 0 2 2 0 014 0zM14 15a4 4 0 00-8 0v3h8v-3zM6 8a2 2 0 11-4 0 2 2 0 014 0zM16 18v-3a5.972 5.972 0 00-.75-2.906A3.005 3.005 0 0119 15v3h-3zM4.75 12.094A5.973 5.973 0 004 15v3H1v-3a3 3 0 013.75-2.906z"></path>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="text-xl font-bold text-blue-900 mb-2">Atendimento ao Público</h3>
+                            <p class="text-gray-600 mb-4">Treinamento especializado para profissionais de segurança que lidam diretamente com o público. Aprenda técnicas de comunicação eficaz, resolução de conflitos, atendimento a pessoas com necessidades especiais e como conciliar cordialidade com vigilância.</p>
+                            <a href="https://wa.me/5573991234453?text=Olá,%20tenho%20interesse%20no%20curso%20de%20Atendimento%20ao%20Público" class="btn-whatsapp bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-lg flex items-center w-max">
+                                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                                </svg>
+                                Clique Aqui
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="mt-16 py-6 bg-blue-900 bg-opacity-80 backdrop-filter backdrop-blur-lg">
+        <div class="container mx-auto px-4 text-center text-white">
+            <p class="mb-2">© 2025 Cursos Profissionais 100% online. Todos os direitos reservados.</p>
+            <a href="https://wa.me/5573991234453" class="inline-flex items-center text-green-300 hover:text-green-100 transition-colors">
+                <svg class="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+                    <path d="M12 0C5.373 0 0 5.373 0 12c0 6.628 5.373 12 12 12 6.628 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm.029 18.88a7.947 7.947 0 0 1-3.82-.97l-4.239 1.11 1.137-4.145a7.908 7.908 0 0 1-1.058-3.955c0-4.365 3.552-7.916 7.917-7.916 4.365 0 7.916 3.551 7.916 7.916 0 4.366-3.551 7.917-7.916 7.917z" fill-rule="nonzero"/>
+                </svg>
+                Entre em contato para mais informações
+            </a>
+        </div>
+    </footer>
+
+    <!-- Botão flutuante de WhatsApp -->
+    <a href="https://wa.me/5573991234453" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transition-all duration-300 transform hover:scale-110 z-50">
+        <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            <path d="M12 0C5.373 0 0 5.373 0 12c0 6.628 5.373 12 12 12 6.628 0 12-5.373 12-12 0-6.628-5.373-12-12-12zm.029 18.88a7.947 7.947 0 0 1-3.82-.97l-4.239 1.11 1.137-4.145a7.908 7.908 0 0 1-1.058-3.955c0-4.365 3.552-7.916 7.917-7.916 4.365 0 7.916 3.551 7.916 7.916 0 4.366-3.551 7.917-7.916 7.917z" fill-rule="nonzero"/>
+        </svg>
+    </a>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'945a23aca0c61ac6',t:'MTc0ODIyOTY1NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
